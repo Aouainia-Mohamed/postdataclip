@@ -1,0 +1,70 @@
+basePath: /
+definitions:
+  Models.Dataclip:
+    properties:
+      argdesc:
+        type: string
+      dataclipkey:
+        type: string
+      description:
+        type: string
+      groupename:
+        type: string
+      name:
+        type: string
+      nargs:
+        type: integer
+      saastype:
+        type: string
+      sqltext:
+        type: string
+    type: object
+host: localhost
+info:
+  contact:
+    email: mohamed@craftfoundry.tech
+    name: Awaniya Mohamed Elmabrouk
+  description: This is a sample service for creating dataclips
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Dataclip post api
+  version: "1.0"
+paths:
+  /Dataclips:
+    get:
+      consumes:
+      - application/json
+      description: list all available dataclips
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Models.Dataclip'
+      summary: list all dataclips
+      tags:
+      - back_end_dataclips
+    post:
+      consumes:
+      - application/json
+      description: Create a new dataclip with the input payload
+      parameters:
+      - description: Dataclip
+        in: body
+        name: dataclip
+        schema:
+          $ref: '#/definitions/Models.Dataclip'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Models.Dataclip'
+      summary: Create a new dataclip
+      tags:
+      - back_end_dataclips
+swagger: "2.0"

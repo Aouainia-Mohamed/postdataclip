@@ -1,0 +1,106 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample service for creating dataclips",
+        "title": "Dataclip post api",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Awaniya Mohamed Elmabrouk",
+            "email": "mohamed@craftfoundry.tech"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost",
+    "basePath": "/",
+    "paths": {
+        "/Dataclips": {
+            "get": {
+                "description": "list all available dataclips",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "back_end_dataclips"
+                ],
+                "summary": "list all dataclips",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Models.Dataclip"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new dataclip with the input payload",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "back_end_dataclips"
+                ],
+                "summary": "Create a new dataclip",
+                "parameters": [
+                    {
+                        "description": "Dataclip",
+                        "name": "dataclip",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Models.Dataclip"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Models.Dataclip"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Models.Dataclip": {
+            "type": "object",
+            "properties": {
+                "argdesc": {
+                    "type": "string"
+                },
+                "dataclipkey": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "groupename": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nargs": {
+                    "type": "integer"
+                },
+                "saastype": {
+                    "type": "string"
+                },
+                "sqltext": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
